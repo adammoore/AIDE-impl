@@ -1,0 +1,436 @@
+{
+  "research_activity": {
+    "raid_id": "https://raid.org/10.1234/ai-climate-research-2025",
+    "title": "AI-Enhanced Climate Change Prediction Study",
+    "description": "Multi-modal AI system for predicting regional climate change impacts using satellite data and machine learning",
+    "contributors": [
+      {
+        "name": "Dr. Sarah Climate",
+        "orcid": "https://orcid.org/0000-0002-1825-0097",
+        "role": "Principal Investigator"
+      },
+      {
+        "name": "Dr. Alex DataScience",
+        "orcid": "https://orcid.org/0000-0003-2456-7890",
+        "role": "AI Specialist"
+      }
+    ],
+    "funding": {
+      "agency": "National Science Foundation",
+      "grant_id": "NSF-2025-CLIMATE-001"
+    },
+    "start_date": "2025-01-01",
+    "end_date": "2027-12-31"
+  },
+  "hierarchical_aide_disclosures": [
+    {
+      "hierarchical_id": "https://raid.org/10.1234/ai-climate-research-2025/aide.001",
+      "disclosure": {
+        "id": "https://raid.org/10.1234/ai-climate-research-2025/aide.001",
+        "created": "2025-03-15T10:30:00Z",
+        "version": "0.2",
+        "actor": {
+          "name": "Dr. Sarah Climate",
+          "orcid": "https://orcid.org/0000-0002-1825-0097",
+          "affiliation": {
+            "name": "University of Climate Sciences",
+            "ror": "https://ror.org/013cjyk83",
+            "accessLevel": "full"
+          },
+          "contributorRole": ["formal_analysis", "ai_assistance", "ai_oversight"]
+        },
+        "context": {
+          "raid": "https://raid.org/10.1234/ai-climate-research-2025",
+          "hierarchical_position": "aide.001",
+          "parent_activity": "https://raid.org/10.1234/ai-climate-research-2025",
+          "grantIdentifier": "NSF-2025-CLIMATE-001",
+          "relatedOutputs": [
+            {
+              "pid": "https://doi.org/10.1234/climate-paper-2025",
+              "relationship": "contributes_to"
+            }
+          ],
+          "pipeline": {
+            "workflowId": "climate-prediction-pipeline-v1",
+            "stepNumber": 1,
+            "batchId": "batch-20250315-001"
+          }
+        },
+        "usage": {
+          "category": "data_analysis",
+          "purpose": "Analyzing satellite temperature data patterns using deep learning for climate trend identification",
+          "contribution_level": "substantial",
+          "role": "analyst",
+          "stage": "analysis",
+          "human_verification": {
+            "method": "expert_validation",
+            "coverage": 0.85
+          }
+        },
+        "model": {
+          "name": "ResNet-Climate",
+          "version": "ResNet-Climate v2.1",
+          "provider": "Climate AI Research Lab",
+          "pid": "https://doi.org/10.1234/resnet-climate-v2-1",
+          "transparency_level": "open",
+          "training_data": {
+            "datasets": [
+              {
+                "pid": "https://doi.org/10.1234/global-satellite-temp-data",
+                "name": "Global Satellite Temperature Dataset 1980-2024",
+                "license": "CC-BY-4.0",
+                "consent_status": "explicit"
+              }
+            ],
+            "training_date": "2024-12-01",
+            "data_cutoff": "2024-11-30"
+          },
+          "capabilities": {
+            "modalities": ["image", "multimodal"],
+            "languages": ["en"],
+            "bias_documentation": "https://example.org/resnet-climate-bias-report"
+          },
+          "sustainability": {
+            "energy_estimate": "145 kWh",
+            "carbon_footprint": "72 kg CO2e",
+            "efficiency_measures": ["GPU optimization", "model pruning"]
+          }
+        },
+        "data": {
+          "input_sources": [
+            {
+              "pid": "https://doi.org/10.1234/modis-satellite-data-2024",
+              "type": "dataset",
+              "license": "NASA Open Data",
+              "usage_rights": "permitted"
+            },
+            {
+              "pid": "https://doi.org/10.1234/weather-station-data-2024",
+              "type": "dataset",
+              "license": "NOAA Public Domain",
+              "usage_rights": "permitted"
+            }
+          ],
+          "generated_outputs": [
+            {
+              "pid": "https://doi.org/10.1234/climate-analysis-results-2025",
+              "type": "analysis",
+              "verification_status": "verified"
+            }
+          ]
+        },
+        "prompts": {
+          "promptClass": "climate_pattern_analyzer_v2",
+          "promptHash": "sha256:7d4c8e9f2a1b3c5d6e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d",
+          "outputHash": "sha256:a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+          "algorithm": "sha256",
+          "prompt_engineering": {
+            "iterations": 5,
+            "technique": "few_shot",
+            "temperature": 0.1
+          },
+          "change_log": [
+            {
+              "timestamp": "2025-03-15T10:30:00Z",
+              "change_type": "prompt_modified",
+              "description": "Updated prompt for better regional specificity"
+            }
+          ]
+        },
+        "provenance": {
+          "chain_integrity": true,
+          "backward_traceable": true,
+          "source_chain": [
+            {
+              "step": 0,
+              "pid": "https://raid.org/10.1234/ai-climate-research-2025",
+              "transformation": "research_activity_context",
+              "confidence": 1.0
+            },
+            {
+              "step": 1,
+              "pid": "https://doi.org/10.1234/modis-satellite-data-2024",
+              "transformation": "data_preprocessing",
+              "confidence": 0.95
+            },
+            {
+              "step": 2,
+              "pid": "https://doi.org/10.1234/resnet-climate-v2-1",
+              "transformation": "ai_analysis",
+              "confidence": 0.87
+            }
+          ],
+          "verification_method": "cryptographic",
+          "immutable_record": "https://blockchain.research.org/tx/abc123def456"
+        },
+        "oversight": {
+          "humanInTheLoop": true,
+          "responsibleUse": true,
+          "bias_mitigation": {
+            "assessed": true,
+            "mitigation_steps": [
+              "Geographic bias assessment across 5 climate regions",
+              "Temporal bias correction for seasonal variations",
+              "Cross-validation with ground station data"
+            ]
+          },
+          "ethical_review": {
+            "required": true,
+            "obtained": true,
+            "reference": "ETH-2025-CLIMATE-001"
+          },
+          "quality_assurance": {
+            "validation_method": "peer_review",
+            "accuracy_estimate": 0.89
+          },
+          "notes": "Climate model predictions validated against independent observational data"
+        },
+        "access_equity": {
+          "cost_tier": "institutional",
+          "geographic_restrictions": [],
+          "accessibility_features": ["multilingual", "high_contrast"],
+          "digital_divide_considerations": "Model results made available through public climate data portal"
+        }
+      }
+    },
+    {
+      "hierarchical_id": "https://raid.org/10.1234/ai-climate-research-2025/aide.002",
+      "disclosure": {
+        "id": "https://raid.org/10.1234/ai-climate-research-2025/aide.002",
+        "created": "2025-04-02T14:15:00Z",
+        "version": "0.2",
+        "actor": {
+          "name": "Dr. Alex DataScience",
+          "orcid": "https://orcid.org/0000-0003-2456-7890",
+          "affiliation": {
+            "name": "Institute for AI Research",
+            "ror": "https://ror.org/024mrxd33",
+            "accessLevel": "full"
+          },
+          "contributorRole": ["writing_original_draft", "ai_assistance"]
+        },
+        "context": {
+          "raid": "https://raid.org/10.1234/ai-climate-research-2025",
+          "hierarchical_position": "aide.002",
+          "parent_activity": "https://raid.org/10.1234/ai-climate-research-2025",
+          "relatedOutputs": [
+            {
+              "pid": "https://doi.org/10.1234/climate-paper-2025",
+              "relationship": "contributes_to"
+            }
+          ],
+          "pipeline": {
+            "workflowId": "climate-prediction-pipeline-v1",
+            "stepNumber": 2,
+            "batchId": "batch-20250402-001"
+          }
+        },
+        "usage": {
+          "category": "writing",
+          "purpose": "Generating first draft of methodology section describing AI model architecture and training process",
+          "contribution_level": "minimal",
+          "role": "assistant",
+          "stage": "writing",
+          "human_verification": {
+            "method": "manual_review",
+            "coverage": 1.0
+          }
+        },
+        "model": {
+          "name": "GPT-4",
+          "version": "GPT-4o",
+          "provider": "OpenAI",
+          "transparency_level": "limited",
+          "capabilities": {
+            "modalities": ["text"],
+            "languages": ["en"]
+          }
+        },
+        "data": {
+          "input_sources": [
+            {
+              "pid": "https://doi.org/10.1234/climate-analysis-results-2025",
+              "type": "analysis",
+              "license": "CC-BY-4.0",
+              "usage_rights": "permitted"
+            }
+          ],
+          "generated_outputs": [
+            {
+              "pid": "https://doi.org/10.1234/methodology-draft-v1",
+              "type": "text",
+              "verification_status": "verified"
+            }
+          ]
+        },
+        "prompts": {
+          "promptClass": "academic_methodology_writer_v1",
+          "promptHash": "sha256:b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+          "outputHash": "sha256:c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4",
+          "algorithm": "sha256",
+          "prompt_engineering": {
+            "iterations": 2,
+            "technique": "zero_shot",
+            "temperature": 0.3
+          }
+        },
+        "provenance": {
+          "chain_integrity": true,
+          "backward_traceable": true,
+          "source_chain": [
+            {
+              "step": 0,
+              "pid": "https://raid.org/10.1234/ai-climate-research-2025",
+              "transformation": "research_activity_context",
+              "confidence": 1.0
+            },
+            {
+              "step": 1,
+              "pid": "https://doi.org/10.1234/climate-analysis-results-2025",
+              "transformation": "content_generation",
+              "confidence": 0.92
+            }
+          ],
+          "verification_method": "manual"
+        },
+        "oversight": {
+          "humanInTheLoop": true,
+          "responsibleUse": true,
+          "bias_mitigation": {
+            "assessed": true,
+            "mitigation_steps": ["Manual fact-checking", "Scientific accuracy review"]
+          },
+          "quality_assurance": {
+            "validation_method": "expert_validation",
+            "accuracy_estimate": 0.95
+          }
+        }
+      }
+    },
+    {
+      "hierarchical_id": "https://raid.org/10.1234/ai-climate-research-2025/aide.003",
+      "disclosure": {
+        "id": "https://raid.org/10.1234/ai-climate-research-2025/aide.003",
+        "created": "2025-05-10T09:45:00Z",
+        "version": "0.2",
+        "actor": {
+          "name": "Automated Pipeline System",
+          "orcid": "https://orcid.org/0000-0002-1825-0097",
+          "contributorRole": ["data_curation", "ai_assistance"]
+        },
+        "context": {
+          "raid": "https://raid.org/10.1234/ai-climate-research-2025",
+          "hierarchical_position": "aide.003",
+          "parent_activity": "https://raid.org/10.1234/ai-climate-research-2025",
+          "pipeline": {
+            "workflowId": "climate-prediction-pipeline-v1",
+            "stepNumber": 3,
+            "batchId": "batch-20250510-automated"
+          }
+        },
+        "usage": {
+          "category": "image_generation",
+          "purpose": "Generating climate visualization maps for research publication",
+          "contribution_level": "substantial",
+          "role": "generator",
+          "stage": "visualization",
+          "human_verification": {
+            "method": "spot_check",
+            "coverage": 0.25
+          }
+        },
+        "model": {
+          "name": "DALL-E",
+          "version": "DALL-E 3",
+          "provider": "OpenAI",
+          "transparency_level": "limited",
+          "capabilities": {
+            "modalities": ["text", "image"],
+            "languages": ["en"]
+          }
+        },
+        "data": {
+          "input_sources": [
+            {
+              "pid": "https://doi.org/10.1234/climate-analysis-results-2025",
+              "type": "analysis",
+              "license": "CC-BY-4.0",
+              "usage_rights": "permitted"
+            }
+          ],
+          "generated_outputs": [
+            {
+              "pid": "https://doi.org/10.1234/climate-visualizations-2025",
+              "type": "image",
+              "verification_status": "spot_checked"
+            }
+          ]
+        },
+        "prompts": {
+          "promptClass": "scientific_visualization_generator_v1",
+          "promptHash": "sha256:d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5",
+          "outputHash": "sha256:e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6",
+          "algorithm": "sha256",
+          "prompt_engineering": {
+            "iterations": 1,
+            "technique": "zero_shot",
+            "temperature": 0.7
+          }
+        },
+        "provenance": {
+          "chain_integrity": true,
+          "backward_traceable": true,
+          "source_chain": [
+            {
+              "step": 0,
+              "pid": "https://raid.org/10.1234/ai-climate-research-2025",
+              "transformation": "research_activity_context",
+              "confidence": 1.0
+            },
+            {
+              "step": 1,
+              "pid": "https://doi.org/10.1234/climate-analysis-results-2025",
+              "transformation": "visualization_generation",
+              "confidence": 0.78
+            }
+          ],
+          "verification_method": "automated"
+        },
+        "oversight": {
+          "humanInTheLoop": false,
+          "responsibleUse": true,
+          "bias_mitigation": {
+            "assessed": true,
+            "mitigation_steps": ["Color accessibility check", "Geographic representation balance"]
+          },
+          "quality_assurance": {
+            "validation_method": "automated_testing",
+            "accuracy_estimate": 0.82
+          },
+          "notes": "Automated generation with human spot-checking for scientific accuracy"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "total_disclosures": 3,
+    "ai_categories": ["data_analysis", "writing", "image_generation"],
+    "models_used": ["ResNet-Climate", "GPT-4", "DALL-E"],
+    "contribution_levels": {
+      "minimal": 1,
+      "substantial": 2,
+      "extensive": 0,
+      "primary": 0
+    },
+    "human_oversight": {
+      "total_with_human_in_loop": 2,
+      "automated_only": 1,
+      "average_verification_coverage": 0.7
+    },
+    "compliance_summary": {
+      "ethical_review_obtained": 1,
+      "bias_assessments_completed": 3,
+      "responsible_use_confirmed": 3
+    }
+  }
+}

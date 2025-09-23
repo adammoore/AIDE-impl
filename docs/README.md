@@ -1,48 +1,57 @@
 # AIDE Documentation
 
-This directory contains comprehensive documentation for the AI Disclosure Event (AIDE) schema project.
+This directory contains comprehensive documentation for the AI Disclosure Event (AIDE) schema project, including the new RAiD integration for hierarchical PID management.
 
 ## 📁 Directory Structure
 
-### `/papers/`
-Core research papers and reports defining the AIDE framework:
-- `AIDE_Draft_Report.pdf` - Technical implementation report
-- `AIDE_White_Paper.pdf` - Persistent identifiers for trust in AI-enabled research
-- `AIDE_Green_Paper.pdf` - Policy and framework overview
+### 🆕 RAiD Integration Documentation
+- `README-RAID-INTEGRATION.md` - Complete RAiD integration guide with production deployment
+- `raid-integration-design.md` - Technical design and architecture documentation
+- `IMPLEMENTATION-SUMMARY.md` - Summary of implementation achievements and capabilities
 
-### `/diagrams/`
-Visual materials including flow diagrams, mockups, and presentations:
-- `AIDE_Badge_Flow_Diagram.pdf/.png/.svg` - Process flow for badge implementation
-- `AIDE_Badge_Mockup.png/.svg` - Visual mockup of provenance badges
-- `AIDE_Badge_Slide.pdf` - Presentation slide for badge concept
-- `AIDE_Infographic_Slide.pdf` - Overview infographic
-- `AIDE_Badge_Diagrams.pptx` - Editable PowerPoint diagrams
-- `AIDE_Infographic.pptx` - Editable infographic source
+### Core AIDE Documentation
+- `hierarchical-pid-specification.md` - Hierarchical PID system specification for cost optimization
+- `technical-roadmap-2025-2027.md` - Implementation roadmap addressing global challenges
 
-### `/specs/`
-Technical specifications and implementation details:
-- `AIDE_Provenance_Badge_Spec.pdf` - Detailed badge specification
+### Legacy Documentation (Available in Original Framework)
+- `papers/` - Core research papers and reports defining the AIDE framework
+- `diagrams/` - Visual materials including flow diagrams, mockups, and presentations
+- `specs/` - Technical specifications and implementation details
 
 ## 📖 Key Documents
 
-### Getting Started
-1. Start with `papers/AIDE_White_Paper.pdf` for the conceptual overview
-2. Review `papers/AIDE_Draft_Report.pdf` for technical details
-3. Examine `diagrams/AIDE_Badge_Flow_Diagram.pdf` for implementation flow
-4. Check `specs/AIDE_Provenance_Badge_Spec.pdf` for badge requirements
+### 🚀 Quick Start with RAiD Integration
+1. **[README-RAID-INTEGRATION.md](README-RAID-INTEGRATION.md)** - Complete guide to RAiD integration
+2. **[IMPLEMENTATION-SUMMARY.md](IMPLEMENTATION-SUMMARY.md)** - Overview of what's been accomplished
+3. **[raid-integration-design.md](raid-integration-design.md)** - Technical design and API documentation
+4. **[hierarchical-pid-specification.md](hierarchical-pid-specification.md)** - PID hierarchy specification
 
 ### Implementation Guide
 The main implementation is documented in the root [README.md](../README.md) with:
-- Schema definitions in `/src/`
-- Example disclosures in `/src/examples/`
+- Enhanced schema definitions with RAiD support in `/src/`
+- RAiD integration client and logic in `/src/`
+- Interactive demos and examples in `/examples/`
+- Legacy example disclosures in `/src/examples/`
 - Validation tools in `/scripts/`
 - Test suite in `/tests/`
 
 ## 🔗 Related Resources
 
-- [JSON Schema](../src/aide_schema_v0_1.json) - Machine-readable schema definition
-- [XSD Schema](../src/aide_schema_v0_1.xsd) - XML validation schema
-- [Example Files](../src/examples/) - Complete disclosure examples
+### Schema and Implementation
+- [JSON Schema v0.2](../src/aide_schema_v0_2.json) - Enhanced schema with RAiD integration
+- [JSON Schema v0.1](../src/aide_schema_v0_1.json) - Original schema definition
+- [RAiD Client](../src/raid-client.js) - RAiD API client implementation
+- [Integration Layer](../src/aide-raid-integration.js) - Main integration logic
+
+### Examples and Demos
+- [RAiD Integration Demo](../examples/aide-raid-demo.js) - Interactive demonstration
+- [Live API Test Suite](../examples/aide-raid-test-implementation.js) - Comprehensive testing
+- [Workflow Example](../examples/aide-raid-workflow-example.json) - Multi-step research workflow
+- [Legacy Examples](../src/examples/) - Original v0.1 disclosure examples
+
+### External Resources
+- [RAiD Project](https://raid.org/) - Research Activity Identifier homepage
+- [RAiD API Documentation](https://api.demo.raid.org.au/swagger-ui/) - API reference
 - [GitHub Repository](https://github.com/adammoore/AIDE-impl) - Main project
 
 ## 📝 Contributing to Documentation

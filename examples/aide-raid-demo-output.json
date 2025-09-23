@@ -1,0 +1,225 @@
+{
+  "timestamp": "2025-09-23T20:41:04.381Z",
+  "demo_metadata": {
+    "description": "AIDE-RAiD Integration Demo Output",
+    "version": "0.2",
+    "note": "This is mock data for demonstration purposes"
+  },
+  "raidId": "https://raid.org/10.1234/demo-research-2025",
+  "hierarchicalAide": {
+    "created": "2025-09-23T20:41:04.376Z",
+    "version": "0.2",
+    "actor": {
+      "name": "Dr. Demo Researcher",
+      "orcid": "https://orcid.org/0000-0002-1825-0097",
+      "affiliation": {
+        "name": "Demo University",
+        "ror": "https://ror.org/013cjyk83",
+        "accessLevel": "full"
+      },
+      "contributorRole": [
+        "formal_analysis",
+        "ai_assistance"
+      ]
+    },
+    "usage": {
+      "category": "data_analysis",
+      "purpose": "Demonstrating AIDE-RAiD integration with sample data analysis",
+      "contribution_level": "substantial",
+      "role": "analyst",
+      "stage": "analysis",
+      "human_verification": {
+        "method": "manual_review",
+        "coverage": 0.9
+      }
+    },
+    "model": {
+      "name": "GPT-4",
+      "version": "GPT-4o mini",
+      "provider": "OpenAI",
+      "transparency_level": "limited",
+      "capabilities": {
+        "modalities": [
+          "text"
+        ],
+        "languages": [
+          "en"
+        ]
+      }
+    },
+    "data": {
+      "input_sources": [
+        {
+          "pid": "https://doi.org/10.1234/demo-dataset",
+          "type": "dataset",
+          "license": "CC-BY-4.0",
+          "usage_rights": "permitted"
+        }
+      ],
+      "generated_outputs": [
+        {
+          "pid": "https://doi.org/10.1234/demo-analysis-results",
+          "type": "analysis",
+          "verification_status": "verified"
+        }
+      ]
+    },
+    "prompts": {
+      "promptClass": "demo_data_analyzer_v1",
+      "promptHash": "sha256:demo1234567890abcdef",
+      "outputHash": "sha256:result1234567890abcdef",
+      "algorithm": "sha256",
+      "prompt_engineering": {
+        "iterations": 2,
+        "technique": "few_shot",
+        "temperature": 0.1
+      }
+    },
+    "oversight": {
+      "humanInTheLoop": true,
+      "responsibleUse": true,
+      "bias_mitigation": {
+        "assessed": true,
+        "mitigation_steps": [
+          "Sample bias assessment",
+          "Output review"
+        ]
+      },
+      "quality_assurance": {
+        "validation_method": "peer_review",
+        "accuracy_estimate": 0.88
+      }
+    },
+    "provenance": {
+      "chain_integrity": true,
+      "backward_traceable": true,
+      "verification_method": "manual",
+      "source_chain": [
+        {
+          "step": 0,
+          "pid": "https://raid.org/10.1234/demo-research-2025",
+          "transformation": "research_activity_context",
+          "confidence": 1
+        }
+      ]
+    },
+    "id": "https://raid.org/10.1234/demo-research-2025/aide.1758660064381.vkwu",
+    "context": {
+      "raid": "https://raid.org/10.1234/demo-research-2025",
+      "hierarchical_position": "aide.1758660064381.vkwu",
+      "parent_activity": "https://raid.org/10.1234/demo-research-2025"
+    }
+  },
+  "batchResults": [
+    {
+      "id": "https://raid.org/10.1234/demo-research-2025/aide.batch.1758660064381.1",
+      "context": {
+        "raid": "https://raid.org/10.1234/demo-research-2025",
+        "hierarchical_position": "aide.batch.1758660064381.1",
+        "pipeline": {
+          "batchId": "demo-batch-1758660064381",
+          "stepNumber": 1,
+          "totalSteps": 3
+        }
+      },
+      "usage": {
+        "category": "writing",
+        "purpose": "Literature review",
+        "contribution_level": "minimal"
+      },
+      "model": {
+        "name": "Claude",
+        "provider": "Anthropic"
+      },
+      "oversight": {
+        "humanInTheLoop": true,
+        "responsibleUse": true
+      }
+    },
+    {
+      "id": "https://raid.org/10.1234/demo-research-2025/aide.batch.1758660064381.2",
+      "context": {
+        "raid": "https://raid.org/10.1234/demo-research-2025",
+        "hierarchical_position": "aide.batch.1758660064381.2",
+        "pipeline": {
+          "batchId": "demo-batch-1758660064381",
+          "stepNumber": 2,
+          "totalSteps": 3
+        }
+      },
+      "usage": {
+        "category": "coding",
+        "purpose": "Data analysis script",
+        "contribution_level": "substantial"
+      },
+      "model": {
+        "name": "CodeLlama",
+        "provider": "Meta"
+      },
+      "oversight": {
+        "humanInTheLoop": true,
+        "responsibleUse": true
+      }
+    },
+    {
+      "id": "https://raid.org/10.1234/demo-research-2025/aide.batch.1758660064381.3",
+      "context": {
+        "raid": "https://raid.org/10.1234/demo-research-2025",
+        "hierarchical_position": "aide.batch.1758660064381.3",
+        "pipeline": {
+          "batchId": "demo-batch-1758660064381",
+          "stepNumber": 3,
+          "totalSteps": 3
+        }
+      },
+      "usage": {
+        "category": "image_generation",
+        "purpose": "Research visualization",
+        "contribution_level": "substantial"
+      },
+      "model": {
+        "name": "DALL-E",
+        "provider": "OpenAI"
+      },
+      "oversight": {
+        "humanInTheLoop": true,
+        "responsibleUse": true
+      }
+    }
+  ],
+  "summary": {
+    "totalDisclosures": 3,
+    "categories": {
+      "writing": 1,
+      "coding": 1,
+      "image_generation": 1
+    },
+    "models": {
+      "Claude": 1,
+      "CodeLlama": 1,
+      "DALL-E": 1
+    },
+    "humanOversight": 3
+  },
+  "validation": {
+    "schema": {
+      "valid": false,
+      "errors": [
+        {
+          "instancePath": "",
+          "schemaPath": "#/required",
+          "keyword": "required",
+          "params": {
+            "missingProperty": "id"
+          },
+          "message": "must have required property 'id'"
+        }
+      ]
+    },
+    "raid": {
+      "valid": true,
+      "issues": [],
+      "warnings": []
+    }
+  }
+}

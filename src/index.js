@@ -4,12 +4,16 @@ const fs = require('fs');
 const path = require('path');
 
 class AIDEValidator {
-  constructor() {
-    this.ajv = new Ajv({ allErrors: true });
+  constructor(version = '0.2') {
+    this.ajv = new Ajv({
+      allErrors: true,
+      strict: false,
+      validateSchema: false // Disable schema validation to handle 2020-12 draft
+    });
     addFormats(this.ajv);
 
     // Load the AIDE schema
-    const schemaPath = path.join(__dirname, 'aide_schema_v0_1.json');
+    const schemaPath = path.join(__dirname, `aide_schema_v${version.replace('.', '_')}.json`);
     this.schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
     this.validate = this.ajv.compile(this.schema);
   }
@@ -64,4 +68,12 @@ class AIDEValidator {
   }
 }
 
-module.exports = { AIDEValidator };
+// Create a default validator instance for convenience
+const defaultValidator = new AIDEValidator();
+
+// Export convenient validate function
+function validate(disclosure) {
+  return defaultValidator.validateDisclosure(disclosure);
+}
+
+module.exports = { AIDEValidator, validate };
