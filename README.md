@@ -190,10 +190,19 @@ Licensed under the Apache License, Version 2.0. See [LICENSE](LICENSE) for detai
 
 This work builds on research by FAIR Research Consultancy and Management, with input from the research integrity and persistent identifier communities.
 
+## 📚 Documentation
+
+Comprehensive documentation is available in the [`/docs`](docs/) directory:
+
+- **Research Papers**: [White papers and reports](docs/papers/) defining the AIDE framework
+- **Visual Materials**: [Diagrams and mockups](docs/diagrams/) for implementation guidance
+- **Technical Specs**: [Detailed specifications](docs/specs/) including badge requirements
+- **Getting Started**: [Documentation overview](docs/README.md)
+
 ## 📞 Contact
 
 - Project Issues: [GitHub Issues](https://github.com/adammoore/AIDE-impl/issues)
-- Documentation: [Project Wiki](https://github.com/adammoore/AIDE-impl/wiki)
+- Documentation: [Project Docs](docs/)
 
 ---
 
