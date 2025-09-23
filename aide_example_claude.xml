@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AIDE>
+  <id>https://doi.org/10.1234/aide.2025.002</id>
+  <created>2025-09-23T09:00:00Z</created>
+  <actor>
+    <name>Dr Adam Vials Moore</name>
+    <orcid>https://orcid.org/0000-0002-2085-1908</orcid>
+    <affiliation>
+      <name>FAIR Research Consultancy and Management</name>
+      <ror>https://ror.org/03yrm5c26</ror>
+    </affiliation>
+  </actor>
+  <usage>
+    <category>information_seeking</category>
+    <purpose>Scoping recent literature and policy.</purpose>
+    <role>assistant</role>
+    <stage>proposal</stage>
+  </usage>
+  <model>
+    <name>Claude</name>
+    <version>3.5 Sonnet</version>
+    <provider>Anthropic</provider>
+    <pid>https://doi.org/10.9999/model.claude3p5.sonnet</pid>
+    <hostingOrg>https://ror.org/05dbe0285</hostingOrg>
+  </model>
+  <data>
+    <sourceDois>
+      <doi>https://doi.org/10.1371/journal.pone.0000001</doi>
+    </sourceDois>
+  </data>
+  <oversight>
+    <humanInTheLoop>true</humanInTheLoop>
+    <responsibleUse>true</responsibleUse>
+  </oversight>
+</AIDE>

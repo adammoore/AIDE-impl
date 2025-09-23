@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codeBook xmlns="http://www.icpsr.umich.edu/DDI" version="2.5">
+  <docDscr>
+    <citation>
+      <titlStmt>
+        <titl>AI Disclosure Event for Methods Drafting</titl>
+        <IDNo agency="DataCite">10.1234/aide.2025.001</IDNo>
+      </titlStmt>
+      <prodStmt>
+        <prodDate>2025-09-23</prodDate>
+      </prodStmt>
+    </citation>
+  </docDscr>
+  <stdyDscr>
+    <citation>
+      <rspStmt>
+        <AuthEnty affiliation="FAIR-Res-ConMan">Dr Adam Vials Moore</AuthEnty>
+        <IDNo agency="ORCID">https://orcid.org/0000-0002-2085-1908</IDNo>
+        <IDNo agency="ROR">https://ror.org/03yrm5c26</IDNo>
+      </rspStmt>
+    </citation>
+    <method>
+      <dataColl>
+        <collMode>writing</collMode>
+        <notes>stage=writing; role=author; purpose=drafting methods</notes>
+      </dataColl>
+      <dataApp>
+        <software>ChatGPT (GPT-4o mini)</software>
+        <notes>provider=OpenAI; modelPID=doi:10.9999/model.gpt4omini.v1</notes>
+      </dataApp>
+      <anlyInfo>
+        <notes>humanInTheLoop=true; responsibleUse=true</notes>
+      </anlyInfo>
+    </method>
+    <dataAccs>
+      <setAvail>
+        <accsPlac>10.5438/dataset.123</accsPlac>
+      </setAvail>
+    </dataAccs>
+  </stdyDscr>
+</codeBook>

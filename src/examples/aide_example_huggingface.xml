@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AIDE>
+  <id>https://doi.org/10.1234/aide.2025.003</id>
+  <created>2025-09-23T09:30:00Z</created>
+  <actor>
+    <name>Dr Adam Vials Moore</name>
+    <orcid>https://orcid.org/0000-0002-2085-1908</orcid>
+    <affiliation>
+      <name>FAIR Research Consultancy and Management</name>
+      <ror>https://ror.org/03yrm5c26</ror>
+    </affiliation>
+  </actor>
+  <usage>
+    <category>coding</category>
+    <purpose>Generate data-cleaning snippets and test harness.</purpose>
+    <role>analyst</role>
+    <stage>analysis</stage>
+  </usage>
+  <model>
+    <name>Llama 3 8B Instruct</name>
+    <version>8B</version>
+    <provider>Hugging Face</provider>
+    <pid>https://doi.org/10.9999/model.llama3.8b.instruct</pid>
+    <hostingOrg>https://ror.org/01bj3aw27</hostingOrg>
+  </model>
+  <data>
+    <datasetDois>
+      <doi>https://doi.org/10.5281/zenodo.7654321</doi>
+    </datasetDois>
+  </data>
+  <prompts>
+    <promptClass>code_fix_v2</promptClass>
+    <algorithm>sha256</algorithm>
+  </prompts>
+  <oversight>
+    <humanInTheLoop>true</humanInTheLoop>
+    <responsibleUse>true</responsibleUse>
+    <notes>Local execution; outputs reviewed before commit.</notes>
+  </oversight>
+</AIDE>

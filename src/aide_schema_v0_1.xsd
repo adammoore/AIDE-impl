@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="AIDE">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:string"/>
+        <xs:element name="created" type="xs:dateTime"/>
+        <xs:element name="actor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string" minOccurs="0"/>
+              <xs:element name="orcid" type="xs:string"/>
+              <xs:element name="affiliation" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string" minOccurs="0"/>
+                    <xs:element name="ror" type="xs:string" minOccurs="0"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="context" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="raid" type="xs:string" minOccurs="0"/>
+              <xs:element name="grantIdentifier" type="xs:string" minOccurs="0"/>
+              <xs:element name="relatedOutputs" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="pid" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="usage">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="category" type="xs:string"/>
+              <xs:element name="purpose" type="xs:string"/>
+              <xs:element name="role" type="xs:string" minOccurs="0"/>
+              <xs:element name="stage" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="model">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="name" type="xs:string"/>
+              <xs:element name="version" type="xs:string" minOccurs="0"/>
+              <xs:element name="provider" type="xs:string" minOccurs="0"/>
+              <xs:element name="pid" type="xs:string" minOccurs="0"/>
+              <xs:element name="hostingOrg" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="data" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="datasetDois" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="doi" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="sourceDois" minOccurs="0">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="doi" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="prompts" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="promptClass" type="xs:string" minOccurs="0"/>
+              <xs:element name="promptHash" type="xs:string" minOccurs="0"/>
+              <xs:element name="outputHash" type="xs:string" minOccurs="0"/>
+              <xs:element name="algorithm" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="oversight">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="humanInTheLoop" type="xs:boolean"/>
+              <xs:element name="responsibleUse" type="xs:boolean"/>
+              <xs:element name="notes" type="xs:string" minOccurs="0"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/aide-0.1.json",
+  "title": "AI Disclosure Event (AIDE)",
+  "description": "Minimal, machine-actionable disclosure of substantive AI use in research workflows.",
+  "type": "object",
+  "required": [
+    "id",
+    "created",
+    "actor",
+    "usage",
+    "model",
+    "oversight"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Persistent identifier (e.g., DOI) for this disclosure event."
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of the disclosure."
+    },
+    "actor": {
+      "type": "object",
+      "required": [
+        "orcid"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "orcid": {
+          "type": "string",
+          "pattern": "^https://orcid\\.org/\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$"
+        },
+        "affiliation": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "ror": {
+              "type": "string",
+              "pattern": "^https://ror\\.org/[0-9a-z]{9}$"
+            }
+          }
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "description": "Optional context such as project or grant.",
+      "properties": {
+        "raid": {
+          "type": "string",
+          "description": "RAiD for the research activity if applicable."
+        },
+        "grantIdentifier": {
+          "type": "string"
+        },
+        "relatedOutputs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "DOI or other PID for outputs related to this disclosure."
+          }
+        }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "required": [
+        "purpose",
+        "category"
+      ],
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "writing",
+            "information_seeking",
+            "practical_guidance",
+            "coding",
+            "data_analysis",
+            "other"
+          ]
+        },
+        "purpose": {
+          "type": "string",
+          "description": "Free-text short purpose, e.g. 'drafting methods', 'literature summary'."
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "author",
+            "analyst",
+            "assistant",
+            "reviewer",
+            "other"
+          ]
+        },
+        "stage": {
+          "type": "string",
+          "enum": [
+            "idea",
+            "proposal",
+            "methods",
+            "analysis",
+            "writing",
+            "review",
+            "publication",
+            "other"
+          ]
+        }
+      }
+    },
+    "model": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Model family or product (e.g., ChatGPT, Claude, Llama)."
+        },
+        "version": {
+          "type": "string",
+          "description": "Model/version tag (e.g., 'GPT-4o mini', 'Claude 3.5 Sonnet', 'Llama 3 8B Instruct')."
+        },
+        "provider": {
+          "type": "string",
+          "description": "Service or platform (OpenAI, Anthropic, Hugging Face, local)."
+        },
+        "pid": {
+          "type": "string",
+          "description": "DOI or other PID for this model/version if assigned."
+        },
+        "hostingOrg": {
+          "type": "string",
+          "description": "ROR of hosting org if applicable."
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "description": "Cited or referenced datasets and sources.",
+      "properties": {
+        "datasetDois": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sourceDois": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "prompts": {
+      "type": "object",
+      "description": "Optional hashed prompt/output capsule.",
+      "properties": {
+        "promptClass": {
+          "type": "string",
+          "description": "Short label of the prompt class (e.g., 'methods_summariser_v1')."
+        },
+        "promptHash": {
+          "type": "string",
+          "description": "Hash of prompt template to avoid leakage."
+        },
+        "outputHash": {
+          "type": "string",
+          "description": "Hash of output used or archived."
+        },
+        "algorithm": {
+          "type": "string",
+          "enum": [
+            "sha256",
+            "sha3-256",
+            "blake2b"
+          ]
+        }
+      }
+    },
+    "oversight": {
+      "type": "object",
+      "required": [
+        "humanInTheLoop",
+        "responsibleUse"
+      ],
+      "properties": {
+        "humanInTheLoop": {
+          "type": "boolean",
+          "description": "Was a human reviewing/controlling the AI output?"
+        },
+        "responsibleUse": {
+          "type": "boolean",
+          "description": "Affirms compliance with policy/ethics."
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

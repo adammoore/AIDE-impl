@@ -1,0 +1,13 @@
+DDI Application Profile (Draft) for AI Disclosure Event (AIDE)
+Scope: Map core AIDE fields to DDI Codebook 2.5 / Lifecycle 3.x elements for interoperability.
+
+AIDE.id               -> <citation><titlStmt><IDNo agency="DataCite">doi:...</IDNo>
+AIDE.created          -> <stdyDscr><citation><prodStmt><prodDate>
+AIDE.actor.orcid      -> <stdyDscr><rspStmt><AuthEnty affiliation="...">Name</AuthEnty> + <IDNo agency="ORCID">...</IDNo>
+AIDE.actor.affiliation -> <stdyDscr><rspStmt><Affiliation> + <IDNo agency="ROR">...</IDNo>
+AIDE.usage.category   -> <stdyDscr><method><dataColl><collMode> (controlled vocabulary extension)
+AIDE.usage.stage      -> <stdyDscr><method><dataColl><timeMeth> (note: provisional mapping)
+AIDE.model.*          -> <stdyDscr><method><dataApp><software> (extend with <IDNo agency="DOI"> for model PID)
+AIDE.data.datasetDois -> <stdyDscr><dataAccs><setAvail><accsPlac>DOI</accsPlac>
+AIDE.prompts.*        -> <stdyDscr><method><dataColl><notes> (hash capsule; avoid content leakage)
+AIDE.oversight.*      -> <stdyDscr><method><anlyInfo><notes> (responsible use attestation)

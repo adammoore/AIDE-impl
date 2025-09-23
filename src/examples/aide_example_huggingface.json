@@ -1,0 +1,40 @@
+{
+  "id": "https://doi.org/10.1234/aide.2025.003",
+  "created": "2025-09-23T09:30:00Z",
+  "actor": {
+    "name": "Dr Adam Vials Moore",
+    "orcid": "https://orcid.org/0000-0002-2085-1908",
+    "affiliation": {
+      "name": "FAIR Research Consultancy and Management",
+      "ror": "https://ror.org/03yrm5c26"
+    }
+  },
+  "usage": {
+    "category": "coding",
+    "purpose": "Generate data-cleaning snippets and test harness.",
+    "role": "analyst",
+    "stage": "analysis"
+  },
+  "model": {
+    "name": "Llama 3 8B Instruct",
+    "version": "8B",
+    "provider": "Hugging Face",
+    "pid": "https://doi.org/10.9999/model.llama3.8b.instruct",
+    "hostingOrg": "https://ror.org/01bj3aw27"
+  },
+  "data": {
+    "datasetDois": [
+      "https://doi.org/10.5281/zenodo.7654321"
+    ],
+    "sourceDois": []
+  },
+  "prompts": {
+    "promptClass": "code_fix_v2",
+    "algorithm": "sha256"
+  },
+  "oversight": {
+    "humanInTheLoop": true,
+    "responsibleUse": true,
+    "notes": "Local execution; outputs reviewed before commit."
+  }
+}

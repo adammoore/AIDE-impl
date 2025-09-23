@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AIDE>
+  <id>https://doi.org/10.1234/aide.2025.001</id>
+  <created>2025-09-23T08:15:00Z</created>
+  <actor>
+    <name>Dr Adam Vials Moore</name>
+    <orcid>https://orcid.org/0000-0002-2085-1908</orcid>
+    <affiliation>
+      <name>FAIR Research Consultancy and Management</name>
+      <ror>https://ror.org/03yrm5c26</ror>
+    </affiliation>
+  </actor>
+  <context>
+    <raid>https://raid.org/10.9999/raid.123</raid>
+    <grantIdentifier>UKRI-ABC-12345</grantIdentifier>
+    <relatedOutputs>
+      <pid>https://doi.org/10.5281/zenodo.1234567</pid>
+    </relatedOutputs>
+  </context>
+  <usage>
+    <category>writing</category>
+    <purpose>Drafting methods and summarising background literature.</purpose>
+    <role>author</role>
+    <stage>writing</stage>
+  </usage>
+  <model>
+    <name>ChatGPT</name>
+    <version>GPT-4o mini</version>
+    <provider>OpenAI</provider>
+    <pid>https://doi.org/10.9999/model.gpt4omini.v1</pid>
+    <hostingOrg>https://ror.org/04b5b1a33</hostingOrg>
+  </model>
+  <data>
+    <datasetDois>
+      <doi>https://doi.org/10.5061/dryad.ab12c</doi>
+    </datasetDois>
+    <sourceDois>
+      <doi>https://doi.org/10.1038/s41586-019-1234-5</doi>
+    </sourceDois>
+  </data>
+  <prompts>
+    <promptClass>methods_summariser_v1</promptClass>
+    <promptHash>sha256:3d9c1a...</promptHash>
+    <outputHash>sha256:7a1f2b...</outputHash>
+    <algorithm>sha256</algorithm>
+  </prompts>
+  <oversight>
+    <humanInTheLoop>true</humanInTheLoop>
+    <responsibleUse>true</responsibleUse>
+    <notes>Outputs were edited and verified by the author.</notes>
+  </oversight>
+</AIDE>
