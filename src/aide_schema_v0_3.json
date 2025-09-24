@@ -1,0 +1,845 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/aide-0.3.json",
+  "title": "AI Disclosure Event (AIDE) v0.3",
+  "description": "Enhanced machine-actionable disclosure of AI use in research workflows with extended CRediT taxonomy and SWHID integration for model identification.",
+  "type": "object",
+  "required": [
+    "id",
+    "created",
+    "actor",
+    "usage",
+    "model",
+    "oversight",
+    "provenance"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Hierarchical persistent identifier (e.g., RAiD with component identifier) for this disclosure event."
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of the disclosure."
+    },
+    "version": {
+      "type": "string",
+      "default": "0.3",
+      "description": "AIDE schema version used."
+    },
+    "actor": {
+      "type": "object",
+      "required": [
+        "orcid"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "orcid": {
+          "type": "string",
+          "pattern": "^https://orcid\\.org/\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]$"
+        },
+        "affiliation": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "ror": {
+              "type": "string",
+              "pattern": "^https://ror\\.org/[0-9a-z]{9}$"
+            },
+            "accessLevel": {
+              "type": "string",
+              "enum": ["full", "limited", "restricted"],
+              "description": "AI access level available to this institution for equity tracking."
+            }
+          }
+        },
+        "contributorRole": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "conceptualization",
+              "data_curation",
+              "formal_analysis",
+              "funding_acquisition",
+              "investigation",
+              "methodology",
+              "project_administration",
+              "resources",
+              "software",
+              "supervision",
+              "validation",
+              "visualization",
+              "writing_original_draft",
+              "writing_review_editing",
+              "ai_curation",
+              "ai_oversight",
+              "ai_integration"
+            ]
+          },
+          "description": "Enhanced CRediT taxonomy including AI-specific roles for comprehensive attribution."
+        },
+        "ai_contribution_details": {
+          "type": "object",
+          "description": "Detailed information about AI assistance in each contributor role.",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "ai_assistance_level": {
+                "type": "string",
+                "enum": ["minimal", "moderate", "substantial", "extensive"],
+                "description": "Level of AI assistance in this role."
+              },
+              "ai_tools_used": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "List of AI tools or systems used."
+              },
+              "human_oversight": {
+                "type": "string",
+                "enum": ["none", "minimal", "continuous", "comprehensive"],
+                "description": "Level of human oversight during AI assistance."
+              },
+              "validation_method": {
+                "type": "string",
+                "enum": ["none", "manual_review", "expert_validation", "peer_review", "automated_testing"],
+                "description": "Method used to validate AI contributions."
+              },
+              "confidence_level": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence level in AI contribution quality (0.0-1.0)."
+              },
+              "justification": {
+                "type": "string",
+                "description": "Explanation of why AI assistance was used for this role."
+              }
+            }
+          }
+        },
+        "attribution_metadata": {
+          "type": "object",
+          "description": "Metadata about the attribution system used.",
+          "properties": {
+            "attribution_level": {
+              "type": "string",
+              "enum": ["basic", "detailed", "comprehensive"],
+              "description": "Level of detail in attribution information."
+            },
+            "credit_version": {
+              "type": "string",
+              "description": "Version of CRediT taxonomy used (e.g., 'enhanced-v1.0')."
+            },
+            "generation_method": {
+              "type": "string",
+              "enum": ["manual", "assisted", "automated"],
+              "description": "How the attribution was generated."
+            }
+          }
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "description": "Research context and related identifiers.",
+      "properties": {
+        "raid": {
+          "type": "string",
+          "description": "RAiD for the research activity if applicable."
+        },
+        "grantIdentifier": {
+          "type": "string"
+        },
+        "relatedOutputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pid": {
+                "type": "string",
+                "description": "DOI or other PID for related output."
+              },
+              "relationship": {
+                "type": "string",
+                "enum": ["derives_from", "contributes_to", "validates", "supplements"],
+                "description": "Relationship type for bidirectional provenance."
+              }
+            }
+          }
+        },
+        "pipeline": {
+          "type": "object",
+          "description": "Automated research pipeline context.",
+          "properties": {
+            "workflowId": {
+              "type": "string",
+              "description": "Identifier for the research workflow or pipeline."
+            },
+            "stepNumber": {
+              "type": "integer",
+              "description": "Step number in automated pipeline."
+            },
+            "batchId": {
+              "type": "string",
+              "description": "Batch identifier for grouped AI operations."
+            }
+          }
+        }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "required": [
+        "purpose",
+        "category",
+        "contribution_level"
+      ],
+      "properties": {
+        "category": {
+          "type": "string",
+          "enum": [
+            "writing",
+            "information_seeking",
+            "practical_guidance",
+            "coding",
+            "data_analysis",
+            "data_generation",
+            "image_generation",
+            "translation",
+            "editing",
+            "summarization",
+            "classification",
+            "prediction",
+            "model_training",
+            "model_inference",
+            "other"
+          ]
+        },
+        "purpose": {
+          "type": "string",
+          "description": "Free-text short purpose, e.g. 'drafting methods', 'literature summary'."
+        },
+        "contribution_level": {
+          "type": "string",
+          "enum": [
+            "minimal",
+            "substantial",
+            "extensive",
+            "primary"
+          ],
+          "description": "Level of AI contribution to the research output."
+        },
+        "role": {
+          "type": "string",
+          "enum": [
+            "author",
+            "analyst",
+            "assistant",
+            "reviewer",
+            "translator",
+            "editor",
+            "generator",
+            "classifier",
+            "predictor",
+            "trainer",
+            "other"
+          ]
+        },
+        "stage": {
+          "type": "string",
+          "enum": [
+            "idea",
+            "proposal",
+            "methods",
+            "data_collection",
+            "analysis",
+            "writing",
+            "review",
+            "publication",
+            "dissemination",
+            "other"
+          ]
+        },
+        "human_verification": {
+          "type": "object",
+          "properties": {
+            "method": {
+              "type": "string",
+              "enum": ["manual_review", "spot_check", "automated_validation", "peer_review", "expert_validation", "none"],
+              "description": "Method used to verify AI output."
+            },
+            "coverage": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Percentage of AI output that was human-verified (0.0-1.0)."
+            }
+          }
+        }
+      }
+    },
+    "model": {
+      "type": "object",
+      "required": [
+        "name",
+        "transparency_level"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Model family or product (e.g., ChatGPT, Claude, Llama)."
+        },
+        "version": {
+          "type": "string",
+          "description": "Model/version tag (e.g., 'GPT-4o mini', 'Claude 3.5 Sonnet', 'Llama 3 8B Instruct')."
+        },
+        "provider": {
+          "type": "string",
+          "description": "Service or platform (OpenAI, Anthropic, Hugging Face, local)."
+        },
+        "pid": {
+          "type": "string",
+          "description": "DOI or other PID for this model/version if assigned."
+        },
+        "swhid": {
+          "type": "object",
+          "description": "Software Heritage identifiers for model components.",
+          "properties": {
+            "core": {
+              "type": "string",
+              "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+              "description": "Core SWHID for the complete model package."
+            },
+            "architecture": {
+              "type": "string",
+              "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+              "description": "SWHID for model architecture definition."
+            },
+            "weights": {
+              "type": "string",
+              "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+              "description": "SWHID for model weights/parameters."
+            },
+            "training_code": {
+              "type": "string",
+              "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+              "description": "SWHID for training code and scripts."
+            },
+            "inference_code": {
+              "type": "string",
+              "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+              "description": "SWHID for inference/serving code."
+            },
+            "config": {
+              "type": "string",
+              "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+              "description": "SWHID for configuration files."
+            },
+            "release": {
+              "type": "string",
+              "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+              "description": "SWHID for tagged model release."
+            }
+          }
+        },
+        "software_heritage": {
+          "type": "object",
+          "description": "Software Heritage archival information.",
+          "properties": {
+            "archived": {
+              "type": "boolean",
+              "description": "Whether the model is archived in Software Heritage."
+            },
+            "archival_date": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Date when model was archived."
+            },
+            "verification_status": {
+              "type": "string",
+              "enum": ["verified", "pending", "failed", "not_verified"],
+              "description": "Status of SWHID verification."
+            }
+          }
+        },
+        "hostingOrg": {
+          "type": "string",
+          "description": "ROR of hosting org if applicable."
+        },
+        "transparency_level": {
+          "type": "string",
+          "enum": ["open", "documented", "limited", "closed"],
+          "description": "Level of model transparency and documentation available."
+        },
+        "training_data": {
+          "type": "object",
+          "description": "Information about model training data.",
+          "properties": {
+            "datasets": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "pid": {
+                    "type": "string",
+                    "description": "DOI or PID for training dataset."
+                  },
+                  "swhid": {
+                    "type": "string",
+                    "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+                    "description": "SWHID for training dataset if available."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Dataset name or description."
+                  },
+                  "license": {
+                    "type": "string",
+                    "description": "License under which dataset was used."
+                  },
+                  "consent_status": {
+                    "type": "string",
+                    "enum": ["explicit", "implied", "unclear", "none"],
+                    "description": "Consent status for data use in training."
+                  }
+                }
+              }
+            },
+            "training_date": {
+              "type": "string",
+              "format": "date",
+              "description": "Date when model training was completed."
+            },
+            "data_cutoff": {
+              "type": "string",
+              "format": "date",
+              "description": "Knowledge cutoff date for the model."
+            }
+          }
+        },
+        "capabilities": {
+          "type": "object",
+          "properties": {
+            "modalities": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["text", "image", "audio", "video", "code", "multimodal"]
+              }
+            },
+            "languages": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "ISO 639-1 language codes supported."
+            },
+            "bias_documentation": {
+              "type": "string",
+              "description": "URL to bias and limitations documentation."
+            }
+          }
+        },
+        "sustainability": {
+          "type": "object",
+          "properties": {
+            "energy_estimate": {
+              "type": "string",
+              "description": "Energy consumption estimate for this usage (kWh)."
+            },
+            "carbon_footprint": {
+              "type": "string",
+              "description": "Carbon footprint estimate (kg CO2e)."
+            },
+            "efficiency_measures": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Efficiency measures implemented."
+            }
+          }
+        },
+        "model_lineage": {
+          "type": "object",
+          "description": "Lineage and derivation information for the model.",
+          "properties": {
+            "base_models": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Name of the base model."
+                  },
+                  "swhid": {
+                    "type": "string",
+                    "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+                    "description": "SWHID of the base model."
+                  },
+                  "relationship": {
+                    "type": "string",
+                    "enum": ["fine_tuned_from", "distilled_from", "merged_with", "derived_from"],
+                    "description": "Relationship to the current model."
+                  }
+                }
+              }
+            },
+            "training_snapshots": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^swh:1:snp:[a-f0-9]{40}(;.+)?$",
+                "description": "SWHIDs of training process snapshots."
+              }
+            }
+          }
+        }
+      }
+    },
+    "data": {
+      "type": "object",
+      "description": "Input data sources and generated data outputs.",
+      "properties": {
+        "input_sources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pid": {
+                "type": "string",
+                "description": "DOI or PID for input data source."
+              },
+              "swhid": {
+                "type": "string",
+                "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+                "description": "SWHID for input data source if available."
+              },
+              "type": {
+                "type": "string",
+                "enum": ["dataset", "publication", "code", "model", "other"]
+              },
+              "license": {
+                "type": "string",
+                "description": "License of the input source."
+              },
+              "usage_rights": {
+                "type": "string",
+                "enum": ["permitted", "fair_use", "unclear", "unauthorized"],
+                "description": "Rights status for AI processing."
+              }
+            }
+          }
+        },
+        "generated_outputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "pid": {
+                "type": "string",
+                "description": "PID assigned to generated data."
+              },
+              "swhid": {
+                "type": "string",
+                "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+                "description": "SWHID for generated output if applicable."
+              },
+              "type": {
+                "type": "string",
+                "enum": ["text", "code", "data", "image", "analysis", "summary", "translation", "model", "other"]
+              },
+              "verification_status": {
+                "type": "string",
+                "enum": ["verified", "spot_checked", "unverified"],
+                "description": "Human verification status of generated output."
+              }
+            }
+          }
+        }
+      }
+    },
+    "prompts": {
+      "type": "object",
+      "description": "Enhanced prompt and output tracking with transparency options.",
+      "properties": {
+        "promptClass": {
+          "type": "string",
+          "description": "Short label of the prompt class (e.g., 'methods_summariser_v1')."
+        },
+        "promptHash": {
+          "type": "string",
+          "description": "Hash of prompt template to avoid leakage."
+        },
+        "outputHash": {
+          "type": "string",
+          "description": "Hash of output used or archived."
+        },
+        "algorithm": {
+          "type": "string",
+          "enum": [
+            "sha256",
+            "sha3-256",
+            "blake2b"
+          ]
+        },
+        "prompt_engineering": {
+          "type": "object",
+          "properties": {
+            "iterations": {
+              "type": "integer",
+              "description": "Number of prompt iterations used."
+            },
+            "technique": {
+              "type": "string",
+              "enum": ["zero_shot", "few_shot", "chain_of_thought", "retrieval_augmented", "fine_tuned", "other"]
+            },
+            "temperature": {
+              "type": "number",
+              "description": "Temperature or randomness setting used."
+            },
+            "engineering_method": {
+              "type": "string",
+              "enum": ["manual", "automated", "iterative_refinement", "systematic_optimization"],
+              "description": "Method used for prompt engineering."
+            }
+          }
+        },
+        "change_log": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "timestamp": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "change_type": {
+                "type": "string",
+                "enum": ["prompt_modified", "output_regenerated", "human_edited", "verified", "validated"]
+              },
+              "description": {
+                "type": "string"
+              },
+              "actor": {
+                "type": "string",
+                "description": "Who made the change (ORCID or name)."
+              }
+            }
+          },
+          "description": "Machine-readable change log for automated systems."
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "chain_integrity",
+        "backward_traceable"
+      ],
+      "description": "Bidirectional provenance tracking and verification with SWHID support.",
+      "properties": {
+        "chain_integrity": {
+          "type": "boolean",
+          "description": "Whether complete provenance chain is maintained."
+        },
+        "backward_traceable": {
+          "type": "boolean",
+          "description": "Whether outputs can be traced back to original sources."
+        },
+        "source_chain": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "step": {
+                "type": "integer"
+              },
+              "pid": {
+                "type": "string",
+                "description": "PID of source at this step."
+              },
+              "swhid": {
+                "type": "string",
+                "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+                "description": "SWHID of software artifact at this step."
+              },
+              "transformation": {
+                "type": "string",
+                "description": "Type of transformation applied."
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence in this provenance link (0.0-1.0)."
+              },
+              "human_validation": {
+                "type": "boolean",
+                "description": "Whether this step was human-validated."
+              }
+            }
+          },
+          "description": "Complete provenance chain from sources to outputs."
+        },
+        "software_provenance": {
+          "type": "object",
+          "description": "Software-specific provenance using SWHIDs.",
+          "properties": {
+            "model_lineage": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "swhid": {
+                    "type": "string",
+                    "pattern": "^swh:1:[a-z]{3}:[a-f0-9]{40}(;.+)?$",
+                    "description": "SWHID of related software artifact."
+                  },
+                  "relationship": {
+                    "type": "string",
+                    "enum": ["derived_from", "trained_with", "based_on", "includes", "extends"],
+                    "description": "Relationship to the current disclosure."
+                  },
+                  "confidence": {
+                    "type": "number",
+                    "minimum": 0,
+                    "maximum": 1,
+                    "description": "Confidence in this relationship (0.0-1.0)."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "verification_method": {
+          "type": "string",
+          "enum": ["manual", "cryptographic", "consensus", "automated", "swhid_verification", "none"],
+          "description": "Method used to verify provenance claims."
+        },
+        "immutable_record": {
+          "type": "string",
+          "description": "Link to immutable record (blockchain, distributed ledger, Software Heritage, etc.)."
+        }
+      }
+    },
+    "oversight": {
+      "type": "object",
+      "required": [
+        "humanInTheLoop",
+        "responsibleUse",
+        "bias_mitigation"
+      ],
+      "properties": {
+        "humanInTheLoop": {
+          "type": "boolean",
+          "description": "Was a human reviewing/controlling the AI output?"
+        },
+        "responsibleUse": {
+          "type": "boolean",
+          "description": "Affirms compliance with policy/ethics."
+        },
+        "bias_mitigation": {
+          "type": "object",
+          "properties": {
+            "assessed": {
+              "type": "boolean",
+              "description": "Whether bias was assessed in AI outputs."
+            },
+            "mitigation_steps": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Steps taken to mitigate identified biases."
+            },
+            "assessment_method": {
+              "type": "string",
+              "enum": ["manual_review", "automated_testing", "expert_evaluation", "community_feedback", "none"],
+              "description": "Method used to assess bias."
+            }
+          }
+        },
+        "ethical_review": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "type": "boolean",
+              "description": "Whether ethical review was required for this AI use."
+            },
+            "obtained": {
+              "type": "boolean",
+              "description": "Whether ethical approval was obtained."
+            },
+            "reference": {
+              "type": "string",
+              "description": "Reference number for ethical approval."
+            }
+          }
+        },
+        "quality_assurance": {
+          "type": "object",
+          "properties": {
+            "validation_method": {
+              "type": "string",
+              "enum": ["peer_review", "expert_validation", "automated_testing", "benchmark_comparison", "cross_validation", "none"]
+            },
+            "accuracy_estimate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Estimated accuracy of AI output (0.0-1.0)."
+            },
+            "validation_coverage": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Percentage of AI output validated (0.0-1.0)."
+            }
+          }
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "access_equity": {
+      "type": "object",
+      "description": "Information for tracking global accessibility and equity.",
+      "properties": {
+        "cost_tier": {
+          "type": "string",
+          "enum": ["free", "institutional", "individual_subscription", "pay_per_use", "enterprise"],
+          "description": "Cost model used for AI access."
+        },
+        "geographic_restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "ISO 3166-1 alpha-2 country codes where access is restricted."
+        },
+        "accessibility_features": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["screen_reader", "high_contrast", "keyboard_navigation", "multilingual", "simplified_interface"]
+          }
+        },
+        "digital_divide_considerations": {
+          "type": "string",
+          "description": "Notes on how digital divide impacts were considered."
+        }
+      }
+    }
+  }
+}

@@ -68,6 +68,10 @@ class AIDEValidator {
   }
 }
 
+// Import additional utilities
+const CreditAttribution = require('./credit-attribution');
+const SwhidUtils = require('./swhid-utils');
+
 // Create a default validator instance for convenience
 const defaultValidator = new AIDEValidator();
 
@@ -76,4 +80,10 @@ function validate(disclosure) {
   return defaultValidator.validateDisclosure(disclosure);
 }
 
-module.exports = { AIDEValidator, validate };
+// Export enhanced utilities
+module.exports = {
+  AIDEValidator,
+  validate,
+  CreditAttribution,
+  SwhidUtils
+};

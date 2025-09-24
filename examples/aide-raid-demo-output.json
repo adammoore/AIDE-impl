@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-09-23T20:41:04.381Z",
+  "timestamp": "2025-09-23T20:57:06.000Z",
   "demo_metadata": {
     "description": "AIDE-RAiD Integration Demo Output",
     "version": "0.2",
@@ -7,7 +7,7 @@
   },
   "raidId": "https://raid.org/10.1234/demo-research-2025",
   "hierarchicalAide": {
-    "created": "2025-09-23T20:41:04.376Z",
+    "created": "2025-09-23T20:57:05.997Z",
     "version": "0.2",
     "actor": {
       "name": "Dr. Demo Researcher",
@@ -103,21 +103,21 @@
         }
       ]
     },
-    "id": "https://raid.org/10.1234/demo-research-2025/aide.1758660064381.vkwu",
+    "id": "https://raid.org/10.1234/demo-research-2025/aide.1758661026000.rh1n",
     "context": {
       "raid": "https://raid.org/10.1234/demo-research-2025",
-      "hierarchical_position": "aide.1758660064381.vkwu",
+      "hierarchical_position": "aide.1758661026000.rh1n",
       "parent_activity": "https://raid.org/10.1234/demo-research-2025"
     }
   },
   "batchResults": [
     {
-      "id": "https://raid.org/10.1234/demo-research-2025/aide.batch.1758660064381.1",
+      "id": "https://raid.org/10.1234/demo-research-2025/aide.batch.1758661026000.1",
       "context": {
         "raid": "https://raid.org/10.1234/demo-research-2025",
-        "hierarchical_position": "aide.batch.1758660064381.1",
+        "hierarchical_position": "aide.batch.1758661026000.1",
         "pipeline": {
-          "batchId": "demo-batch-1758660064381",
+          "batchId": "demo-batch-1758661026000",
           "stepNumber": 1,
           "totalSteps": 3
         }
@@ -137,12 +137,12 @@
       }
     },
     {
-      "id": "https://raid.org/10.1234/demo-research-2025/aide.batch.1758660064381.2",
+      "id": "https://raid.org/10.1234/demo-research-2025/aide.batch.1758661026000.2",
       "context": {
         "raid": "https://raid.org/10.1234/demo-research-2025",
-        "hierarchical_position": "aide.batch.1758660064381.2",
+        "hierarchical_position": "aide.batch.1758661026000.2",
         "pipeline": {
-          "batchId": "demo-batch-1758660064381",
+          "batchId": "demo-batch-1758661026000",
           "stepNumber": 2,
           "totalSteps": 3
         }
@@ -162,12 +162,12 @@
       }
     },
     {
-      "id": "https://raid.org/10.1234/demo-research-2025/aide.batch.1758660064381.3",
+      "id": "https://raid.org/10.1234/demo-research-2025/aide.batch.1758661026000.3",
       "context": {
         "raid": "https://raid.org/10.1234/demo-research-2025",
-        "hierarchical_position": "aide.batch.1758660064381.3",
+        "hierarchical_position": "aide.batch.1758661026000.3",
         "pipeline": {
-          "batchId": "demo-batch-1758660064381",
+          "batchId": "demo-batch-1758661026000",
           "stepNumber": 3,
           "totalSteps": 3
         }

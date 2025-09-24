@@ -1,0 +1,221 @@
+{
+  "id": "https://raid.org/10.1234/climate-ai-research-2025/aide.003",
+  "created": "2025-09-24T07:06:11.773Z",
+  "version": "0.3",
+  "actor": {
+    "name": "Dr. Climate AI Specialist",
+    "orcid": "https://orcid.org/0000-0002-1825-0097",
+    "affiliation": {
+      "name": "Institute for Climate AI Research",
+      "ror": "https://ror.org/013cjyk83",
+      "accessLevel": "full"
+    },
+    "contributorRole": [
+      "conceptualization",
+      "formal_analysis",
+      "methodology",
+      "ai_curation",
+      "ai_oversight",
+      "ai_integration"
+    ],
+    "ai_contribution_details": {
+      "formal_analysis": {
+        "ai_assistance_level": "substantial",
+        "ai_tools_used": [
+          "Climate-BERT v2.1",
+          "Statistical Analysis AI"
+        ],
+        "human_oversight": "continuous",
+        "validation_method": "expert_validation",
+        "confidence_level": 0.89,
+        "justification": "AI models provided domain expertise in climate data pattern recognition"
+      },
+      "ai_curation": {
+        "ai_assistance_level": "extensive",
+        "ai_tools_used": [
+          "Model Selection Framework"
+        ],
+        "human_oversight": "comprehensive",
+        "validation_method": "peer_review",
+        "confidence_level": 0.95,
+        "justification": "Systematic evaluation and selection of optimal AI models for climate analysis"
+      }
+    },
+    "attribution_metadata": {
+      "attribution_level": "comprehensive",
+      "credit_version": "enhanced-v1.0",
+      "generation_method": "assisted"
+    }
+  },
+  "context": {
+    "raid": "https://raid.org/10.1234/climate-ai-research-2025",
+    "grantIdentifier": "NSF-2025-CLIMATE-AI-001",
+    "relatedOutputs": [
+      {
+        "pid": "https://doi.org/10.1234/climate-ai-paper-2025",
+        "relationship": "contributes_to"
+      }
+    ]
+  },
+  "usage": {
+    "category": "data_analysis",
+    "purpose": "Advanced climate pattern analysis using transformer-based models",
+    "contribution_level": "substantial",
+    "role": "analyst",
+    "stage": "analysis",
+    "human_verification": {
+      "method": "expert_validation",
+      "coverage": 0.85
+    }
+  },
+  "model": {
+    "name": "Climate-BERT",
+    "version": "v2.1.0",
+    "provider": "Climate AI Research Lab",
+    "pid": "https://doi.org/10.1234/climate-bert-v2-1",
+    "swhid": {
+      "core": "swh:1:dir:94a9ed024d3859793618152ea559a168bbcbb5e2",
+      "architecture": "swh:1:cnt:abc123def456789012345678901234567890abcd",
+      "weights": "swh:1:cnt:def456789012345678901234567890abcdef1234",
+      "training_code": "swh:1:dir:789012345678901234567890abcdef123456789a",
+      "config": "swh:1:cnt:012345678901234567890abcdef123456789abc12",
+      "release": "swh:1:rel:345678901234567890abcdef123456789abc1234"
+    },
+    "software_heritage": {
+      "archived": true,
+      "archival_date": "2025-01-15T10:00:00Z",
+      "verification_status": "verified"
+    },
+    "transparency_level": "open",
+    "training_data": {
+      "datasets": [
+        {
+          "pid": "https://doi.org/10.1234/climate-dataset-2024",
+          "swhid": "swh:1:dir:567890abcdef123456789abc123456789012345",
+          "name": "Global Climate Data Archive 2024",
+          "license": "CC-BY-4.0",
+          "consent_status": "explicit"
+        }
+      ],
+      "training_date": "2024-12-01",
+      "data_cutoff": "2024-11-30"
+    },
+    "capabilities": {
+      "modalities": [
+        "text",
+        "multimodal"
+      ],
+      "languages": [
+        "en"
+      ],
+      "bias_documentation": "https://example.org/climate-bert-bias-report"
+    },
+    "model_lineage": {
+      "base_models": [
+        {
+          "name": "BERT-base-uncased",
+          "swhid": "swh:1:rel:890abcdef123456789abc123456789012345678",
+          "relationship": "fine_tuned_from"
+        }
+      ]
+    }
+  },
+  "data": {
+    "input_sources": [
+      {
+        "pid": "https://doi.org/10.1234/satellite-climate-data",
+        "swhid": "swh:1:dir:bcdef123456789abc123456789012345678901",
+        "type": "dataset",
+        "license": "NASA Open Data",
+        "usage_rights": "permitted"
+      }
+    ],
+    "generated_outputs": [
+      {
+        "pid": "https://doi.org/10.1234/climate-analysis-results-2025",
+        "swhid": "swh:1:cnt:cdef123456789abc123456789012345678901a",
+        "type": "analysis",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  "prompts": {
+    "promptClass": "climate_analysis_v2",
+    "promptHash": "sha256:a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2",
+    "outputHash": "sha256:b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3",
+    "algorithm": "sha256",
+    "prompt_engineering": {
+      "iterations": 3,
+      "technique": "few_shot",
+      "temperature": 0.1,
+      "engineering_method": "systematic_optimization"
+    }
+  },
+  "provenance": {
+    "chain_integrity": true,
+    "backward_traceable": true,
+    "source_chain": [
+      {
+        "step": 0,
+        "pid": "https://raid.org/10.1234/climate-ai-research-2025",
+        "transformation": "research_activity_context",
+        "confidence": 1,
+        "human_validation": true
+      },
+      {
+        "step": 1,
+        "swhid": "swh:1:rel:345678901234567890abcdef123456789abc1234",
+        "transformation": "ai_model_inference",
+        "confidence": 0.89,
+        "human_validation": true
+      }
+    ],
+    "software_provenance": {
+      "model_lineage": [
+        {
+          "swhid": "swh:1:rel:890abcdef123456789abc123456789012345678",
+          "relationship": "derived_from",
+          "confidence": 1
+        },
+        {
+          "swhid": "swh:1:dir:789012345678901234567890abcdef123456789a",
+          "relationship": "trained_with",
+          "confidence": 0.95
+        }
+      ]
+    },
+    "verification_method": "swhid_verification"
+  },
+  "oversight": {
+    "humanInTheLoop": true,
+    "responsibleUse": true,
+    "bias_mitigation": {
+      "assessed": true,
+      "mitigation_steps": [
+        "Geographic bias assessment across climate regions",
+        "Temporal bias correction for seasonal variations",
+        "Model fairness evaluation across different climate zones"
+      ],
+      "assessment_method": "expert_evaluation"
+    },
+    "ethical_review": {
+      "required": true,
+      "obtained": true,
+      "reference": "ETH-2025-CLIMATE-AI-003"
+    },
+    "quality_assurance": {
+      "validation_method": "cross_validation",
+      "accuracy_estimate": 0.92,
+      "validation_coverage": 0.85
+    }
+  },
+  "access_equity": {
+    "cost_tier": "institutional",
+    "geographic_restrictions": [],
+    "accessibility_features": [
+      "multilingual",
+      "high_contrast"
+    ],
+    "digital_divide_considerations": "Model results made available through public climate data portal with API access for developing regions"
+  }
+}

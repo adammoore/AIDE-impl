@@ -6,11 +6,17 @@
 
 **Enhanced machine-actionable disclosure of AI use in research workflows with hierarchical PID management and RAiD integration**
 
-## 🆕 AIDE v0.2 - Now with RAiD Integration
+## 🆕 AIDE v0.3 - Enhanced Attribution with CRediT and SWHID
 
-AIDE v0.2 introduces major enhancements including **hierarchical persistent identifier (PID) management through RAiD integration**, addressing critical issues in AI research transparency, accessibility, and trust identified through stakeholder consultations and the evolving AI landscape.
+AIDE v0.3 introduces **enhanced attribution systems** with extended CRediT taxonomy and SWHID integration, building on the successful RAiD integration from v0.2. This version addresses critical questions about AI contribution attribution and software heritage in research.
 
-### 🔗 RAiD Integration Highlights
+### 🎭 Enhanced Attribution Highlights
+- **Extended CRediT Taxonomy**: 3 new AI-specific roles (ai_curation, ai_oversight, ai_integration)
+- **Human-Centric Attribution**: AI as sophisticated tools, not contributors
+- **SWHID Integration**: Software Heritage identifiers for AI models and components
+- **Comprehensive Provenance**: Complete software lineage tracking with cryptographic integrity
+
+### 🔗 RAiD Integration (v0.2 Foundation)
 - **Hierarchical PID Structure**: Prevents PID explosion by grouping related AI components under research activities
 - **Real API Integration**: Working implementation with RAiD sandbox and production environments
 - **Global Standards**: Leverages ISO 23527 through RAiD for international compatibility
@@ -32,11 +38,17 @@ AIDE provides a pragmatic schema leveraging existing persistent identifier (PID)
 - 🔄 **Interoperable**: Standard metadata formats
 - 📋 **Policy-aligned**: Meets institutional transparency requirements
 
-### 🚀 New in AIDE v0.2
+### 🚀 New in AIDE v0.3
+- 🎭 **Enhanced CRediT Attribution**: Extended taxonomy with ai_curation, ai_oversight, ai_integration roles
+- 🔗 **SWHID Integration**: Software Heritage identifiers for AI models, weights, and code components
+- 🧠 **Human-Centric Model**: AI systems treated as sophisticated tools, not research contributors
+- 📊 **Granular Attribution**: Multiple levels of detail from basic to comprehensive attribution
+- 🔐 **Software Provenance**: Complete model lineage tracking with cryptographic verification
+
+### 🚀 Established in AIDE v0.2
 - 🔗 **RAiD Integration**: Hierarchical PID management using Research Activity Identifiers
 - 🌐 **Bidirectional Provenance**: Complete source-to-output and output-to-source tracking
 - 🏗️ **Hierarchical PIDs**: Structured component relationships preventing PID explosion
-- 🤝 **Enhanced Attribution**: CRediT-style taxonomy with AI-specific contribution roles
 - 🔍 **Commercial Transparency**: Required disclosure levels for closed AI models
 - 🌍 **Global Equity**: Cost tier and geographic accessibility tracking
 - 🌱 **Sustainability**: Energy consumption and carbon footprint metrics
@@ -45,20 +57,20 @@ AIDE provides a pragmatic schema leveraging existing persistent identifier (PID)
 
 ## 📋 Schema Fields
 
-### Required Fields (v0.1 & v0.2)
+### Required Fields (v0.1, v0.2 & v0.3)
 - `id` - Hierarchical persistent identifier for the disclosure
 - `created` - ISO 8601 timestamp
-- `actor` - ORCID, ROR affiliation, and enhanced contributor roles
+- `actor` - ORCID, ROR affiliation, and enhanced contributor roles with **v0.3**: AI-specific attribution details
 - `usage` - Category, purpose, role, stage, contribution level
-- `model` - Name, version, provider, transparency level
+- `model` - Name, version, provider, transparency level with **v0.3**: SWHID integration for model components
 - `oversight` - Human oversight, responsible use, bias mitigation
-- `provenance` - **New in v0.2**: Bidirectional tracking and verification
+- `provenance` - Bidirectional tracking and verification with **v0.3**: Software provenance via SWHIDs
 
-### Enhanced Fields (v0.2)
+### Enhanced Fields (v0.2 & v0.3)
 - `context` - RAiD, grants, related outputs, pipeline information
-- `data` - Input sources, generated outputs, licensing information
+- `data` - Input sources, generated outputs, licensing information with **v0.3**: SWHID support
 - `prompts` - Hashed capsules with change logs and engineering details
-- `access_equity` - **New**: Cost tiers, geographic restrictions, accessibility features
+- `access_equity` - Cost tiers, geographic restrictions, accessibility features
 
 ## 🚀 Quick Start
 
@@ -70,7 +82,13 @@ cd AIDE-impl
 npm install
 ```
 
-### RAiD Integration Demo
+### Enhanced Attribution Demo (v0.3)
+```bash
+# Run enhanced attribution demo with CRediT and SWHID
+node examples/enhanced-attribution-demo.js
+```
+
+### RAiD Integration Demo (v0.2)
 ```bash
 # Run interactive demo (offline capable)
 node examples/aide-raid-demo.js
@@ -203,27 +221,35 @@ Three pilot programs are planned for 3-6 months each:
 ```
 ├── src/
 │   ├── aide_schema_v0_1.json           # Original JSON Schema definition
-│   ├── aide_schema_v0_2.json           # 🆕 Enhanced schema with RAiD integration
-│   ├── index.js                        # JavaScript validation library (v0.2 support)
-│   ├── raid-client.js                  # 🆕 RAiD API client for PID operations
-│   ├── aide-raid-integration.js        # 🆕 Main integration layer
-│   └── examples/                       # Example disclosure files
+│   ├── aide_schema_v0_2.json           # Enhanced schema with RAiD integration
+│   ├── aide_schema_v0_3.json           # 🆕 Enhanced attribution with CRediT + SWHID
+│   ├── index.js                        # JavaScript validation library (v0.3 support)
+│   ├── raid-client.js                  # RAiD API client for PID operations
+│   ├── aide-raid-integration.js        # Main RAiD integration layer
+│   ├── credit-attribution.js           # 🆕 Enhanced CRediT attribution system
+│   ├── swhid-utils.js                  # 🆕 SWHID generation and validation utilities
+│   └── examples/                       # Example disclosure files (legacy)
 │       ├── aide_example_chatgpt.json   # v0.1 ChatGPT example
 │       ├── aide_example_claude.json    # v0.1 Claude example
 │       ├── aide_example_huggingface.json # v0.1 Hugging Face example
 │       └── aide_example_v0_2_enhanced.json # v0.2 comprehensive example
-├── examples/                           # 🆕 RAiD integration examples
-│   ├── aide-raid-demo.js              # Interactive demo (offline capable)
+├── examples/                           # Integration examples and demos
+│   ├── enhanced-attribution-demo.js    # 🆕 v0.3 attribution demo with CRediT + SWHID
+│   ├── attribution-patterns-examples.json # 🆕 Attribution pattern examples
+│   ├── aide-raid-demo.js              # Interactive RAiD demo (offline capable)
 │   ├── aide-raid-test-implementation.js # Complete test suite with real API
 │   ├── aide-raid-workflow-example.json # Multi-step research workflow
 │   └── aide-raid-demo-output.json     # Generated demo output
 ├── tests/                              # Jest test suite
 ├── scripts/                            # Build and validation scripts
-├── docs/                               # 🆕 Enhanced documentation
+├── docs/                               # Comprehensive documentation
+│   ├── enhanced-attribution-design.md # 🆕 v0.3 attribution system design
+│   ├── attribution-best-practices.md  # 🆕 CRediT + SWHID best practices guide
+│   ├── v0_3-enhancements-summary.md   # 🆕 v0.3 features and benefits summary
 │   ├── hierarchical-pid-specification.md # PID hierarchy design
-│   ├── raid-integration-design.md     # 🆕 RAiD integration technical design
-│   ├── README-RAID-INTEGRATION.md     # 🆕 Complete RAiD integration guide
-│   ├── IMPLEMENTATION-SUMMARY.md      # 🆕 Implementation achievements summary
+│   ├── raid-integration-design.md     # RAiD integration technical design
+│   ├── README-RAID-INTEGRATION.md     # Complete RAiD integration guide
+│   ├── IMPLEMENTATION-SUMMARY.md      # Implementation achievements summary
 │   ├── technical-roadmap-2025-2027.md # Implementation roadmap
 │   └── README.md                      # Documentation overview
 ├── package.json                        # Node.js dependencies
@@ -268,12 +294,20 @@ This work builds on research by FAIR Research Consultancy and Management, with i
 
 Comprehensive documentation is available in the [`/docs`](docs/) directory:
 
-- **🆕 RAiD Integration**: [Complete implementation guide](docs/README-RAID-INTEGRATION.md) with production deployment
-- **🆕 Implementation Summary**: [Achievements and capabilities](docs/IMPLEMENTATION-SUMMARY.md) overview
-- **🆕 RAiD Technical Design**: [Integration architecture](docs/raid-integration-design.md) and API specifications
-- **🆕 Hierarchical PIDs**: [PID system specification](docs/hierarchical-pid-specification.md) for cost optimization
-- **🆕 Technical Roadmap**: [2025-2027 implementation plan](docs/technical-roadmap-2025-2027.md) addressing global challenges
-- **Getting Started**: [Documentation overview](docs/README.md)
+### 🆕 AIDE v0.3 Documentation
+- **🎭 Enhanced Attribution Design**: [Complete system design](docs/enhanced-attribution-design.md) for CRediT + SWHID integration
+- **🎯 Attribution Best Practices**: [Comprehensive guide](docs/attribution-best-practices.md) for AI attribution in research
+- **📋 v0.3 Enhancements Summary**: [Feature overview](docs/v0_3-enhancements-summary.md) and implementation status
+
+### AIDE v0.2 Foundation
+- **🔗 RAiD Integration**: [Complete implementation guide](docs/README-RAID-INTEGRATION.md) with production deployment
+- **📊 Implementation Summary**: [Achievements and capabilities](docs/IMPLEMENTATION-SUMMARY.md) overview
+- **🏗️ RAiD Technical Design**: [Integration architecture](docs/raid-integration-design.md) and API specifications
+- **🔗 Hierarchical PIDs**: [PID system specification](docs/hierarchical-pid-specification.md) for cost optimization
+
+### General Documentation
+- **🗺️ Technical Roadmap**: [2025-2027 implementation plan](docs/technical-roadmap-2025-2027.md) addressing global challenges
+- **📖 Getting Started**: [Documentation overview](docs/README.md)
 
 ## 🗺️ Development Roadmap
 
@@ -283,29 +317,35 @@ Comprehensive documentation is available in the [`/docs`](docs/) directory:
 - ✅ Real API integration and testing
 - ✅ Production-ready implementation
 
-### Phase 2 (Q1-Q2 2025): Enhanced Trust & Provenance
-- Advanced bidirectional provenance validation
-- Cryptographic integrity verification
-- Commercial model transparency reporting
-- Automated compliance checking
+### ✅ Phase 1.5 (COMPLETED): Enhanced Attribution Systems
+- ✅ Extended CRediT taxonomy with AI-specific roles (ai_curation, ai_oversight, ai_integration)
+- ✅ SWHID integration for AI model identification and software provenance
+- ✅ Human-centric attribution model with comprehensive validation
+- ✅ Multiple attribution patterns for different research contexts
 
-### Phase 3 (Q3-Q4 2025): Scale & Automation
-- Large-scale automated research pipelines
-- AI-enhanced metadata generation
-- Real-time hallucination detection
-- Batch processing optimization
-
-### Phase 4 (Q1-Q2 2026): Global Infrastructure
-- Distributed PID validation network
-- Enhanced sustainability tracking
-- Blockchain integration for immutable records
-- Multi-regional RAiD deployment
-
-### Phase 5 (Q3-Q4 2026): Ecosystem Integration
-- Publisher platform integration
+### Phase 2 (Q1-Q2 2025): Standards Integration & Adoption
+- Community adoption of enhanced CRediT extensions
+- Integration with journal submission systems
+- Publisher workflow automation
 - Repository system integration
+
+### Phase 3 (Q2-Q3 2025): Advanced Provenance & Automation
+- Large-scale automated research pipelines
+- AI-enhanced metadata generation with attribution
+- Real-time compliance monitoring
+- Cross-institutional attribution standardization
+
+### Phase 4 (Q4 2025-Q1 2026): Global Infrastructure
+- Distributed PID validation network
+- Enhanced sustainability tracking with software heritage
+- Multi-regional RAiD and SWHID deployment
+- International attribution standard harmonization
+
+### Phase 5 (Q2-Q4 2026): Ecosystem Integration
 - AI vendor partnerships with native AIDE support
-- Funder compliance automation
+- Funder compliance automation with attribution tracking
+- Research integrity dashboards and analytics
+- Global AI research transparency infrastructure
 
 See the complete [Technical Roadmap](docs/technical-roadmap-2025-2027.md) for detailed implementation plans.
 

@@ -1,0 +1,299 @@
+{
+  "attribution_patterns_examples": {
+    "metadata": {
+      "description": "Examples of different attribution patterns for AI use in research using enhanced CRediT taxonomy and SWHID",
+      "version": "0.3",
+      "created": "2025-01-15T10:00:00Z"
+    },
+    "patterns": [
+      {
+        "name": "Basic AI Assistance Pattern",
+        "description": "Simple attribution for minimal AI assistance",
+        "use_case": "Occasional use of AI tools with human oversight",
+        "example": {
+          "actor": {
+            "name": "Dr. Basic Researcher",
+            "orcid": "https://orcid.org/0000-0001-2345-6789",
+            "contributorRole": [
+              "writing_original_draft",
+              "ai_oversight"
+            ],
+            "ai_contribution_details": {
+              "writing_original_draft": {
+                "ai_assistance_level": "minimal",
+                "ai_tools_used": ["ChatGPT-4"],
+                "human_oversight": "comprehensive",
+                "validation_method": "manual_review",
+                "justification": "Used AI for grammar checking and style improvement"
+              }
+            },
+            "attribution_metadata": {
+              "attribution_level": "basic",
+              "credit_version": "enhanced-v1.0"
+            }
+          }
+        }
+      },
+      {
+        "name": "AI Curation Specialist Pattern",
+        "description": "Researcher specializing in AI tool selection and configuration",
+        "use_case": "Data scientist or AI engineer role in research team",
+        "example": {
+          "actor": {
+            "name": "Dr. AI Curator",
+            "orcid": "https://orcid.org/0000-0002-3456-7890",
+            "contributorRole": [
+              "methodology",
+              "ai_curation",
+              "ai_integration",
+              "validation"
+            ],
+            "ai_contribution_details": {
+              "ai_curation": {
+                "ai_assistance_level": "extensive",
+                "ai_tools_used": ["Model Selection Framework", "AutoML Pipeline"],
+                "human_oversight": "continuous",
+                "validation_method": "expert_validation",
+                "confidence_level": 0.95,
+                "justification": "Systematic evaluation and optimization of AI model selection for domain-specific tasks"
+              },
+              "ai_integration": {
+                "ai_assistance_level": "substantial",
+                "ai_tools_used": ["MLflow", "Custom Integration Scripts"],
+                "human_oversight": "continuous",
+                "validation_method": "automated_testing",
+                "confidence_level": 0.88
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "AI Oversight Specialist Pattern",
+        "description": "Researcher focusing on AI validation and bias mitigation",
+        "use_case": "Ethics specialist or AI safety researcher in team",
+        "example": {
+          "actor": {
+            "name": "Dr. AI Ethics Specialist",
+            "orcid": "https://orcid.org/0000-0003-4567-8901",
+            "contributorRole": [
+              "validation",
+              "ai_oversight",
+              "methodology"
+            ],
+            "ai_contribution_details": {
+              "ai_oversight": {
+                "ai_assistance_level": "moderate",
+                "ai_tools_used": ["Bias Detection Framework", "Fairness Metrics Suite"],
+                "human_oversight": "comprehensive",
+                "validation_method": "expert_validation",
+                "confidence_level": 0.92,
+                "justification": "Comprehensive evaluation of AI system fairness, bias, and ethical compliance"
+              }
+            }
+          }
+        }
+      },
+      {
+        "name": "Multi-Modal AI Research Pattern",
+        "description": "Complex research using multiple AI systems across different modalities",
+        "use_case": "Advanced AI research with multiple specialized models",
+        "example": {
+          "actor": {
+            "name": "Dr. Multimodal AI Researcher",
+            "orcid": "https://orcid.org/0000-0004-5678-9012",
+            "contributorRole": [
+              "conceptualization",
+              "formal_analysis",
+              "methodology",
+              "ai_curation",
+              "ai_oversight",
+              "ai_integration",
+              "validation"
+            ],
+            "ai_contribution_details": {
+              "formal_analysis": {
+                "ai_assistance_level": "substantial",
+                "ai_tools_used": ["GPT-4V", "CLIP", "Whisper", "Custom Vision Model"],
+                "human_oversight": "continuous",
+                "validation_method": "cross_validation",
+                "confidence_level": 0.87
+              },
+              "ai_curation": {
+                "ai_assistance_level": "extensive",
+                "ai_tools_used": ["Model Hub", "Hyperparameter Optimization Suite"],
+                "human_oversight": "continuous",
+                "validation_method": "benchmark_comparison",
+                "confidence_level": 0.91
+              }
+            },
+            "attribution_metadata": {
+              "attribution_level": "comprehensive",
+              "credit_version": "enhanced-v1.0",
+              "generation_method": "systematic"
+            }
+          }
+        }
+      },
+      {
+        "name": "Automated Research Pipeline Pattern",
+        "description": "High-throughput research with extensive automation",
+        "use_case": "Drug discovery, climate modeling, or large-scale data analysis",
+        "example": {
+          "actor": {
+            "name": "Dr. Pipeline Researcher",
+            "orcid": "https://orcid.org/0000-0005-6789-0123",
+            "contributorRole": [
+              "methodology",
+              "ai_integration",
+              "ai_curation",
+              "supervision"
+            ],
+            "ai_contribution_details": {
+              "ai_integration": {
+                "ai_assistance_level": "extensive",
+                "ai_tools_used": [
+                  "Automated Experiment Framework",
+                  "Multi-Model Ensemble System",
+                  "Results Aggregation Pipeline"
+                ],
+                "human_oversight": "minimal",
+                "validation_method": "automated_testing",
+                "confidence_level": 0.84,
+                "justification": "Designed and deployed fully automated research pipeline with human oversight at critical decision points"
+              }
+            }
+          },
+          "usage": {
+            "category": "model_training",
+            "purpose": "High-throughput automated model training and evaluation",
+            "contribution_level": "primary",
+            "human_verification": {
+              "method": "spot_check",
+              "coverage": 0.1
+            }
+          }
+        }
+      },
+      {
+        "name": "Clinical AI Research Pattern",
+        "description": "Medical/clinical research with strict validation requirements",
+        "use_case": "Medical diagnosis, clinical decision support, health research",
+        "example": {
+          "actor": {
+            "name": "Dr. Clinical AI Researcher",
+            "orcid": "https://orcid.org/0000-0006-7890-1234",
+            "affiliation": {
+              "name": "Medical AI Research Center",
+              "ror": "https://ror.org/024mrxd33"
+            },
+            "contributorRole": [
+              "investigation",
+              "formal_analysis",
+              "ai_curation",
+              "ai_oversight",
+              "validation"
+            ],
+            "ai_contribution_details": {
+              "formal_analysis": {
+                "ai_assistance_level": "substantial",
+                "ai_tools_used": ["Medical AI Diagnostic Model", "Statistical Analysis AI"],
+                "human_oversight": "comprehensive",
+                "validation_method": "expert_validation",
+                "confidence_level": 0.94,
+                "justification": "AI-assisted analysis of medical imaging data with mandatory clinical expert validation"
+              },
+              "ai_oversight": {
+                "ai_assistance_level": "extensive",
+                "ai_tools_used": ["Clinical Bias Assessment Tool", "Fairness in Healthcare AI"],
+                "human_oversight": "comprehensive",
+                "validation_method": "peer_review",
+                "confidence_level": 0.96,
+                "justification": "Comprehensive bias assessment required for clinical AI applications"
+              }
+            }
+          },
+          "oversight": {
+            "ethical_review": {
+              "required": true,
+              "obtained": true,
+              "reference": "IRB-2025-MEDICAL-AI-001"
+            },
+            "bias_mitigation": {
+              "assessed": true,
+              "assessment_method": "expert_evaluation",
+              "mitigation_steps": [
+                "Demographic bias analysis across patient populations",
+                "Clinical expert validation of all AI recommendations",
+                "Continuous monitoring for algorithmic fairness"
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "attribution_guidelines": {
+      "human_centric_principle": "AI systems are tools used by humans; attribution goes to the responsible human contributors",
+      "transparency_requirement": "Clear distinction between human-authored and AI-assisted contributions",
+      "validation_emphasis": "Document how AI outputs were validated by human experts",
+      "tool_specificity": "Name specific AI tools and versions used",
+      "confidence_levels": "Provide confidence estimates for AI-assisted work",
+      "role_mapping": {
+        "standard_credit_roles": "Use for human intellectual contributions",
+        "ai_curation": "For selection, configuration, and deployment of AI systems",
+        "ai_oversight": "For validation, bias mitigation, and responsible AI practices",
+        "ai_integration": "For incorporating AI into research workflows"
+      }
+    },
+    "swhid_integration_examples": {
+      "model_components": {
+        "complete_model": "swh:1:dir:94a9ed024d3859793618152ea559a168bbcbb5e2",
+        "model_weights": "swh:1:cnt:abc123def456789012345678901234567890abcd",
+        "training_code": "swh:1:dir:def456789012345678901234567890abcdef1234",
+        "inference_code": "swh:1:cnt:789012345678901234567890abcdef123456789a"
+      },
+      "qualified_swhids": {
+        "model_with_origin": "swh:1:cnt:abc123def456789012345678901234567890abcd;origin=https://huggingface.co/model-name",
+        "code_with_path": "swh:1:cnt:def456789012345678901234567890abcdef1234;origin=https://github.com/org/repo;path=/src/model.py"
+      },
+      "provenance_chain": [
+        {
+          "step": 1,
+          "swhid": "swh:1:rel:base-model-v1.0",
+          "relationship": "derived_from",
+          "description": "Base pre-trained model"
+        },
+        {
+          "step": 2,
+          "swhid": "swh:1:dir:training-data-v2.1",
+          "relationship": "trained_with",
+          "description": "Domain-specific training dataset"
+        },
+        {
+          "step": 3,
+          "swhid": "swh:1:snp:training-snapshot-final",
+          "relationship": "created_by",
+          "description": "Final training process snapshot"
+        }
+      ]
+    },
+    "validation_checklist": {
+      "credit_roles": [
+        "All roles are from standard or AI-extended CRediT taxonomy",
+        "AI-specific roles (ai_curation, ai_oversight, ai_integration) are used appropriately",
+        "Human accountability is maintained for all AI-assisted work"
+      ],
+      "swhid_format": [
+        "All SWHIDs follow swh:1:xxx:hash format",
+        "Object types (cnt, dir, rev, rel, snp) are appropriate for artifacts",
+        "Qualifiers are properly encoded for contextual information"
+      ],
+      "attribution_completeness": [
+        "AI assistance level is specified for each role",
+        "Validation methods are documented",
+        "Confidence levels are provided where appropriate",
+        "Justifications explain why AI was used"
+      ]
+    }
+  }
+}
